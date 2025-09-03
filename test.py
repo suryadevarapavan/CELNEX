@@ -21,7 +21,6 @@ def choose():
         print(dex[c])
         print("Your deck is:",deck[dex[c]])
         data={'ID':id,'Characters':dex[c],'DECK':deck[dex[c]]}
-        data=js.dumps(data)
         with open(f"{id}.json","w") as f:
             js.dump(data,f)
     else:
@@ -29,4 +28,5 @@ def choose():
         return False
 print(data)
 choose()
+
 
