@@ -12,7 +12,7 @@ def validate():
         return False
 deck={'A.V':['STAR_CANON','BLAST_EM'],'MARIA':['BLOOD_BATH','CURSE']}
 print(id)
-#data={}
+data={}
 def choose():
     if(validate()):
         global data
@@ -29,3 +29,4 @@ def choose():
         return False
 print(data)
 choose()
+
