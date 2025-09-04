@@ -12,3 +12,21 @@ db.cred.insertMany([{
 }])
 
 db.cred.find().pretty()
+
+db.createCollection('deck')
+
+db.insertMany([{
+    char:'A.V',
+    deck:['STAR_CANON','BLAST_EM'],
+    HP:50
+},
+{
+    char:'MARIA',
+    deck:['BLOOD_BATH','CURSE'],
+    HP:65
+},
+{
+    char:'Yurei Shogun',
+    deck:['SPIRIT_DRAIN','CURSED_FLAME','PHASE_SHIFT'],
+    HP:70
+}])
