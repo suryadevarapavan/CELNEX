@@ -15,7 +15,7 @@ db.cred.find().pretty()
 
 db.createCollection('deck')
 
-db.insertMany([{
+db.deck.insertMany([{
     char:'A.V',
     deck:['STAR_CANON','BLAST_EM'],
     HP:50
