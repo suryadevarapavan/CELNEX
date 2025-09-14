@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Chosen</title>
+</head>
+<body>
+    <h2>You chose: {{ character.char }}</h2>
+    <p><b>HP:</b> {{ character.HP }}</p>
+    <p><b>Deck:</b> {{ character.deck | join(', ') }}</p>
+
+    <p>Character saved to your collection: <b>user_{{ user_id }}</b></p>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
