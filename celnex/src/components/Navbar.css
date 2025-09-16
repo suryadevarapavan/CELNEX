@@ -1,0 +1,12 @@
+
+.Nav{
+  text-align: center;
+  color: white;
+}
+
+.Nav a{
+  text-align:center;
+  color:white;
+  font-family:monospace;
+  font-size:medium;
+}
