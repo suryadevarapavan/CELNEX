@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Work</title>
+</head>
+<body>
+    <h2>CRUD Interface</h2>
+    <form method="POST">
+        Collection Name: <input type="text" name="collection" required><br><br>
+        Name: <input type="text" name="name" required><br><br>
+        HP: <input type="text" name="hp" required><br><br>
+        <input type="submit" value="Add Record">
+    </form>
+
+    <h3>Existing Data:</h3>
+    {% for collection, items in data.items() %}
+        <h4>Collection: {{ collection }}</h4>
+        <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - {{ item.hp }}
+                <a href="{{ url_for('delete', collection=collection, doc_id=item._id) }}">[Delete]</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <br><a href="/logout">Logout</a>
+</body>
+</html>
