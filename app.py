@@ -18,8 +18,8 @@ users_collection = db["users"]
 @app.route("/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        username = request.form.get("username", "").strip().lower()
-        password = request.form.get("password", "").strip().lower()
+        username = request.form.get("username", "").strip()
+        password = request.form.get("password", "").strip()
 
         user = users_collection.find_one({"username": username, "password": password})
         if user:
