@@ -6,12 +6,20 @@ import os
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "your_secret_key_here")  # Use env var in production
 
-# Use MongoDB URI from environment variable
+# Get MongoDB URI from environment variable
 mongo_uri = os.environ.get("MONGO_URI")
 if not mongo_uri:
     raise Exception("MONGO_URI environment variable not set")
 
-client = MongoClient(mongo_uri)
+# Connect to MongoDB and verify connection
+try:
+    client = MongoClient(mongo_uri)
+    client.admin.command('ping')  # Ping DB to confirm connection
+    print("MongoDB connection successful!")
+except Exception as e:
+    print(f"MongoDB connection error: {e}")
+    raise
+
 db = client["dex"]  # explicitly use the 'dex' database
 users_collection = db["users"]
 
@@ -20,8 +28,11 @@ def login():
     if request.method == "POST":
         username = request.form.get("username", "").strip()
         password = request.form.get("password", "").strip()
+        print(f"Login attempt: username='{username}', password='{password}'")
 
         user = users_collection.find_one({"username": username, "password": password})
+        print(f"User found: {user}")
+
         if user:
             session["username"] = username
             return redirect("/work")
@@ -73,6 +84,5 @@ def logout():
     return redirect("/")
 
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
