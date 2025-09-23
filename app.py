@@ -12,15 +12,14 @@ if not mongo_uri:
     raise Exception("MONGO_URI environment variable not set")
 
 client = MongoClient(mongo_uri)
-db = client.get_default_database()  # Gets DB from the URI (you can also specify explicitly)
-
-users_collection = db["users"]  # collection for login users
+db = client["dex"]  # explicitly use the 'dex' database
+users_collection = db["users"]
 
 @app.route("/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        username = request.form.get("username", "").strip()
-        password = request.form.get("password", "").strip()
+        username = request.form.get("username", "").strip().lower()
+        password = request.form.get("password", "").strip().lower()
 
         user = users_collection.find_one({"username": username, "password": password})
         if user:
