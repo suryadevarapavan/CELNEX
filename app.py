@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key_here"  # Replace with a secure key in production!
 
 # MongoDB connection with authentication source set to 'dex'
-client = MongoClient("mongodb://p1ttadu:pwd@localhost:27017/dex?authSource=dex")
+client = MongoClient("mongodb://p1ttadu:<db_password>@localhost:27017/dex?authSource=dex")
 db = client["dex"]
 users_collection = db["users"]  # collection for login users
 
