@@ -29,6 +29,12 @@ def login():
         username = request.form.get("username", "").strip()
         password = request.form.get("password", "").strip()
         print(f"Login attempt: username='{username}', password='{password}'")
+        print("Database name:", db.name)
+        print("Collections in DB:", db.list_collection_names())\
+        print("Users found in 'users' collection:")
+            for u in users_collection.find():
+                print(u)
+
 
         user = users_collection.find_one({"username": username, "password": password})
         print(f"User found: {user}")
