@@ -21,7 +21,7 @@ except Exception as e:
     raise
 
 db = client["dex"]  # explicitly use the 'dex' database
-users_collection = db["users"]
+users_collection = db["user"]
 print("Database name:", db.name)
 print("Collections in DB:", db.list_collection_names())
 print("Users found in 'users' collection:")
