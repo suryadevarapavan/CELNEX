@@ -23,10 +23,10 @@ except Exception as e:
 db = client["dex"]  # explicitly use the 'dex' database
 users_collection = db["users"]
 print("Database name:", db.name)
-        print("Collections in DB:", db.list_collection_names())\
-        print("Users found in 'users' collection:")
-            for u in users_collection.find():
-                print(u)
+print("Collections in DB:", db.list_collection_names())
+print("Users found in 'users' collection:")
+for u in users_collection.find():
+    print(u)
 
 @app.route("/", methods=["GET", "POST"])
 def login():
