@@ -1,3 +1,4 @@
-  flask
-  pymongo
-  gunicorn
+flask
+pymongo
+gunicorn
+bson
