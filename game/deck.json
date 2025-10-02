@@ -1,0 +1,14 @@
+{
+  "Robots":[
+  {
+    "Name":"A.V",
+    "HP":50
+  }
+  ],
+  "Vampire":[
+    {
+      "Name":"Maria",
+      "HP":60
+    }
+  ]
+}
