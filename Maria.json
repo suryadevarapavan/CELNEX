@@ -1,0 +1,20 @@
+{
+  "Name": "Maria",
+  "HP": 65,
+  "Moves": {
+    "BLOOD_BATH": {
+      "damage": 0,
+      "heal": 15,
+      "accuracy": 50,
+      "cooldown": 3,
+      "desc": "Heals 15HP."
+    },
+    "CURSE": {
+      "damage": 5,
+      "heal": 0,
+      "accuracy": 100,
+      "cooldown": 0,
+      "desc": "Deals 5HP damage."
+    }
+  }
+}
