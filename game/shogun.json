@@ -1,0 +1,27 @@
+{
+  "Name": "Yurei Shogun",
+  "HP": 70,
+  "Moves": {
+    "SPIRIT_DRAIN": {
+      "damage": 10,
+      "heal": 10,
+      "accuracy": 80,
+      "cooldown": 2,
+      "desc": "Steals 10HP and heals self by 10HP."
+    },
+    "CURSED_FLAME": {
+      "damage": 15,
+      "heal": 0,
+      "accuracy": 60,
+      "cooldown": 1,
+      "desc": "Deals 15HP AOE damage."
+    },
+    "PHASE_SHIFT": {
+      "damage": 0,
+      "heal": 0,
+      "accuracy": 100,
+      "cooldown": 3,
+      "desc": "Avoids next attack completely."
+    }
+  }
+}
