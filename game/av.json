@@ -1,0 +1,20 @@
+{
+  "Name": "A.V",
+  "HP": 50,
+  "Moves": {
+    "STAR_CANON": {
+      "damage": 20,
+      "heal": 0,
+      "accuracy": 50,
+      "cooldown": 4,
+      "desc": "Long-range attack, deals 20HP."
+    },
+    "BLAST_EM": {
+      "damage": 10,
+      "heal": 0,
+      "accuracy": 100,
+      "cooldown": 0,
+      "desc": "Short-range blast, deals 10HP."
+    }
+  }
+}
