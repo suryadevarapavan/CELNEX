@@ -1,6 +1,3 @@
-//game.py
-
-
 import json
 import random
 import time
